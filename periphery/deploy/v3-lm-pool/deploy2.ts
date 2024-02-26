@@ -73,23 +73,23 @@ export default async function () {
   // Wait until transaction is processed
   await transaction.wait();
 
-  const MasterChefV3Artifact = await hre.artifacts.readArtifact("MasterChefV3");
-  // Initialize contract instance for interaction
-  const masterChefV3 = new Contract(
-    masterChefV3Address,
-    MasterChefV3Artifact.abi,
-    deployer // Interact with the contract on behalf of this wallet
-  );
+  // const MasterChefV3Artifact = await hre.artifacts.readArtifact("MasterChefV3");
+  // // Initialize contract instance for interaction
+  // const masterChefV3 = new Contract(
+  //   masterChefV3Address,
+  //   MasterChefV3Artifact.abi,
+  //   deployer // Interact with the contract on behalf of this wallet
+  // );
 
-  transaction = await masterChefV3.setLmPoolDeployer(
-    pancakeV3LmPoolDeployer.target
-  );
-  console.log(
-    `Transaction hash of masterChefV3 setLmPoolDeployer : ${transaction.hash}`
-  );
+  // transaction = await masterChefV3.setLmPoolDeployer(
+  //   pancakeV3LmPoolDeployer.target
+  // );
+  // console.log(
+  //   `Transaction hash of masterChefV3 setLmPoolDeployer : ${transaction.hash}`
+  // );
 
-  // Wait until transaction is processed
-  await transaction.wait();
+  // // Wait until transaction is processed
+  // await transaction.wait();
 
   console.log(
     "deployer:",
